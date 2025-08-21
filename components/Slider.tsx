@@ -15,7 +15,13 @@ export default function Slider({
 }) {
   const opacities = Array(count)
     .fill(0)
-    .map(() => Math.random() * 80 + 20);
+    .map(() => {
+      const random = Math.random();
+      const range = 95;
+      return (
+        Math.pow(random, 5) * range + (100 - range)
+      );
+    });
   return (
     <>
       <style>{`

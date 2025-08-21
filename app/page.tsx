@@ -8,6 +8,7 @@ export default function Home() {
       {/* container */}
       <div
         className="flex place-content-center items-center"
+        data-theme="dark"
       >
         <Image
           src={logo}
