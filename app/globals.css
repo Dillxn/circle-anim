@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 :root,
-*[data-theme='light'] {
+:root[data-theme='light'] {
   --light-bg: #fff;
   --light-fg: #171717;
   --dark-bg: #0a0a0a;
@@ -24,7 +24,7 @@
   }
 }
 
-*[data-theme='dark'] {
+:root[data-theme='dark'] {
   --background: var(--dark-bg);
   --foreground: var(--dark-fg);
 }

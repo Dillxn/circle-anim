@@ -1,19 +1,21 @@
 import Background from '@/components/Background';
 import Image from 'next/image';
 import logo from '@/public/logo.svg';
+import ThemeSwitch from '@/components/ThemeSwitch';
 
 export default function Home() {
   return (
     <>
       {/* container */}
+
+      <ThemeSwitch />
       <div
         className="flex place-content-center items-center"
-        data-theme="dark"
       >
         <Image
           src={logo}
           alt="Circle Avenue Logo"
-          className="absolute w-[40vw]"
+          className="absolute w-[40vw] z-1"
           style={{
             filter: `drop-shadow(0px 0px 1vw var(--background)) 
             drop-shadow(0px 0px 1vw var(--background)) 
