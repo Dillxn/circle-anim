@@ -6,7 +6,7 @@ export default function Grid({
   gap,
   columns,
   unit,
-  size
+  size,
 }: {
   opacities: number[];
   gap: number;
@@ -25,16 +25,40 @@ export default function Grid({
         }}
       >
         {opacities.map((opacity, index) => (
-          <Image
-            key={index}
-            alt="circle"
-            src={circle}
-            className="max-w-[unset]"
-            style={{
-              opacity: `${opacity}%`,
-              width: `${size}${unit}`
-            }}
-          />
+          <div key={index}>
+            <style>
+              {`
+              @keyframes fadeIn {
+                  from { opacity: 0; }
+                  to   { opacity: 1; }
+                }
+
+                @keyframes fadeOut {
+                  from { opacity: 1; }
+                  to   { opacity: 0; }
+                }
+             `}
+            </style>
+            <Image
+              alt="circle"
+              src={circle}
+              className="absolute max-w-[unset]
+                animate-[fadeOut_900ms_forwards] opacity-0
+                hover:animate-[fadeIn_900ms_forwards]"
+              style={{
+                width: `${size}${unit}`,
+              }}
+            />
+            <Image
+              alt="circle"
+              src={circle}
+              className="pointer-events-none max-w-[unset]"
+              style={{
+                opacity: `${opacity}%`,
+                width: `${size}${unit}`,
+              }}
+            />
+          </div>
         ))}
       </div>
     </>
