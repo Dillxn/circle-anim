@@ -8,6 +8,7 @@
   --dark-fg: #ededed;
   --background: var(--light-bg);
   --foreground: var(--light-fg);
+  --logo-text-color: #2F2F30;
 }
 
 @theme inline {
@@ -21,12 +22,14 @@
   :root {
     --background: var(--dark-bg);
     --foreground: var(--dark-fg);
+    --logo-text-color: #ffffff;
   }
 }
 
 :root[data-theme='dark'] {
   --background: var(--dark-bg);
   --foreground: var(--dark-fg);
+  --logo-text-color: #ffffff;
 }
 
 body {
